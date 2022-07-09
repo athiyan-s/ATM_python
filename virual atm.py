@@ -9,6 +9,7 @@ print("Welcome to virual ATM")
 atm_pin=int(input("Enter your pin: "))
 cash=(sheet["E2"].value)
 pin=(sheet["F2"].value)
+
  
 if(atm_pin!=pin):
     print("you have enter a wrong password")
@@ -30,6 +31,7 @@ if(option==1):
     withdraw=int(input("enter the amount you want to withdraw "))
     withdraw_cash=int(cash)-withdraw
     print(f"your reminding cash is {withdraw_cash} ")
+    sheet["E2"]=cash-withdraw
     print("thank you")
         
     SystemExit
@@ -39,6 +41,7 @@ elif(option==2):
 elif(option==3):
         pay_in=int(input("Enter the amount you want to pay in "))
         add_pay_in=pay_in+int(cash)
+        sheet["E2"]=cash+pay_in
         print(f"your current balance is {add_pay_in}")
 else:
         print("thanks for visitihng or bank")
